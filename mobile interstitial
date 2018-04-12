@@ -1,0 +1,35 @@
+{
+  "name": "mobile interstitial",
+  "description": "",
+  "variables": [
+    {
+      "isTrackingUrl": false,
+      "urlType": "STANDARD_HTTP",
+      "label": "destiantionUrl",
+      "uniqueName": "destiantionUrl",
+      "isRequired": true,
+      "variableType": "URL"
+    },
+    {
+      "mimeTypes": [],
+      "label": "700x500image",
+      "uniqueName": "700x500image",
+      "isRequired": true,
+      "variableType": "ASSET"
+    },
+    {
+      "mimeTypes": [],
+      "label": "320x480image",
+      "uniqueName": "320x480image",
+      "isRequired": true,
+      "variableType": "ASSET"
+    }
+  ],
+  "formatter": "\u003cstyle\u003e\n#interstitial_image_320, #interstitial_image_700 {\ndisplay: none;\n}\n\n#wapa_interstatial_wrapper {\nposition: fixed;\ntop: 50%;\nleft: 50%;\ntransform: translate(-50%,-50%);\npadding: 5px;\nbox-sizing: border-box;\nbackground: white;\n\n}\n#wapa_interstatial_close {\nposition: absolute;\ntop: 9px;\nright: 10px;\ncursor: pointer;\nwidth: 15px;\nheight: 15px;\nbackground-color: #FFF;\nz-index: 600;\ndisplay: flex;\njustify-content: center;\nalign-items: center;\n}\n\n#wapa_interstatial_close:after {\n     content: \u0027\\d7\u0027;\n    font-size: 20px;\n}\n\n@media (max-width: 767px) {\n#interstitial_image_320 { \ndisplay: block;\n}\n}\n\n@media (min-width: 768px) {\n  #interstitial_image_700 { \n  display: block;\n}\n}\n\n\u003c/style\u003e\n\n\u003cdiv id\u003d\"wapa_interstatial_wrapper\"\u003e\n\u003ca target\u003d\"_blank\" href\u003d\"%%CLICK_URL_UNESC%%[%destiantionUrl%]\"\u003e\n\u003cimg id\u003d\"interstitial_image_320\" width\u003d\"320px\" height\u003d\"480px\" src\u003d\"%%VIEW_URL_ESC%%[%320x480image%]\" /\u003e\n\u003cimg id\u003d\"interstitial_image_700\" width\u003d\"700px\" height\u003d\"500px\" src\u003d\"%%VIEW_URL_ESC%%[%700x500image%]\" /\u003e\n\u003c/a\u003e\n\u003cdiv id\u003d\"wapa_interstatial_close\" onClick\u003d\"window.top.document.body.className \u003d \u0027interstatial-set\u0027\"\u003e\u003c/div\u003e\n \u003cdiv \u003e\u003c/div\u003e\n\u003c/div\u003e\n",
+  "type": "USER_DEFINED",
+  "isInterstitial": true,
+  "isNativeEligible": false,
+  "isNativeVideoEligible": false,
+  "isNative360ImageEligible": false,
+  "isSafeFrameCompatible": false
+}
